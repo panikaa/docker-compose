@@ -23,8 +23,8 @@ services:
     env_file: .env
 #    restart: unless-stopped
     ports:
-      - 80:80/tcp
-      - 443:443/tcp
+      - ${DNS_BIND_IP}:80:80/tcp
+      - ${DNS_BIND_IP}:443:443/tcp
     volumes:
       - ${CACHE_ROOT}/cache:/data/cache
       - ${CACHE_ROOT}/logs:/data/logs
